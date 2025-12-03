@@ -74,7 +74,7 @@
    STM32L1   0x1FF00000 | STM32L4     0x1FFF0000 | STM32L5     0x0BF90000 | STM32WBA   0x0BF88000
    STM32WBX  0x1FFF0000 | STM32WL     0x1FFF0000 | STM32U5     0x0BF90000 */
 
-#define DFU_BOOTLOADER_ADDRESS    0x1FFF0000U    // STMF4xx address to jump to to activate DFU bootloader
+#define DFU_BOOTLOADER_ADDRESS   0x1FFF0000U // STMF4xx address to jump to to activate DFU bootloader
 
 /* ERROR CODES (FatFS errors 0-19)
  0 Succeeded
@@ -655,8 +655,6 @@ int main(void)
     // Timeout counter
     if (HAL_GetTick() > 2500) // Requires about 1200-2200ms
         goto USER_APP;
-
-    HAL_Delay(1);
 
     if (USB_status) // Wait for flag
     {
