@@ -150,7 +150,6 @@ void uart_printf(const char * fmt, ...)
     va_start(va, fmt);
     char debug_msg[255]; // Message buffer
     char * buf = debug_msg;
-    char space_zero;
     char c;
     unsigned int num;
     while ((c  = *(fmt++)))
@@ -160,7 +159,7 @@ void uart_printf(const char * fmt, ...)
             int width = 0;
             int base = 2;
             int s_int = 0;
-            space_zero = ' ';
+            char space_zero = ' ';
         MORE_FORMAT:
             c = *(fmt++); // Skip '%', check parameter
             switch (c)
