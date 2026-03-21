@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2025 STMicroelectronics.
+  * Copyright (c) 2026 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -17,7 +17,7 @@
   */
 
 /***********************************************************************************************
-* IRON 2025 smart USB bootloader for MKS Monster8 V1/V2 3D printer motherboard (STM32F407VET6) *
+* IRON 2026 smart USB bootloader for MKS Monster8 V1/V2 3D printer motherboard (STM32F407VET6) *
 ***********************************************************************************************/
 
 /* USER CODE END Header */
@@ -58,7 +58,7 @@
 #define DFU_MAGIC_KEY_ADDRESS    RTC_BKP_DR19                         // Store the magic key at RTC backup register 19
 
 #define FLASHWORD                4U                                   // 4 bytes on STM32F4
-#define FILE_BUFFER_SIZE         8192UL                               // Must be dividable by FLASHWORD
+#define FILE_BUFFER_SIZE         4096UL                               // Must be divisible by FLASHWORD
 #define FLASH_MAX_SECTOR         12U                                  // Max 12 sectors on STM32F4xx (0-11)
 #define FLASH_BOOTLOADER_SIZE    0x0010000UL                          // Bootloader area size
 #define FLASH_USER_START_SECTOR  4U                                   // Bootloader in sector 0-3 (4 x 16KB)
