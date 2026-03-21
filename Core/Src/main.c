@@ -150,16 +150,17 @@ void uart_printf(const char * fmt, ...)
     va_start(va, fmt);
     char debug_msg[255]; // Message buffer
     char * buf = debug_msg;
-    char space_zero = ' ';
+    char space_zero;
     char c;
     unsigned int num;
     while ((c  = *(fmt++)))
     {
-        int width = 0;
         if (c == '%')
         {
+            int width = 0;
             int base = 2;
             int s_int = 0;
+            space_zero = ' ';
         MORE_FORMAT:
             c = *(fmt++); // Skip '%', check parameter
             switch (c)
@@ -326,11 +327,11 @@ int CopyFileToFlashMemory(void)
     Sector  4 0x0801 0000 - 0x0801 FFFF  64KB
     Sector  5 0x0802 0000 - 0x0803 FFFF 128KB
     Sector  6 0x0804 0000 - 0x0805 FFFF 128KB
-    Sector  7 0x0804 0000 - 0x0805 FFFF 128KB
+    Sector  7 0x0804 0000 - 0x0807 FFFF 128KB
     // -- 512KB -----------------------------
-    Sector  8 0x0804 0000 - 0x0805 FFFF 128KB
-    Sector  9 0x0804 0000 - 0x0805 FFFF 128KB
-    Sector 10 0x0804 0000 - 0x0805 FFFF 128KB
+    Sector  8 0x0804 0000 - 0x0809 FFFF 128KB
+    Sector  9 0x0804 0000 - 0x080B FFFF 128KB
+    Sector 10 0x0804 0000 - 0x080D FFFF 128KB
     Sector 11 0x080E 0000 - 0x080F FFFF 128KB */
 
     uint32_t flash_sector_size = 0x10000U;
