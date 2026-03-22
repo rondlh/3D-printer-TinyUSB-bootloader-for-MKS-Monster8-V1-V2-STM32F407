@@ -114,12 +114,12 @@ HCD_HandleTypeDef hhcd_USB_OTG_HS;
 
 /* USER CODE BEGIN PV */
 
-FATFS    FatFs;                            // FAT File System handle
-FIL      fwFile;                        // File handle for the firmware file
-FRESULT  result;                        // File operation result
+FATFS    FatFs;                        // FAT File System handle
+FIL      fwFile;                       // File handle for the firmware file
+FRESULT  result;                       // File operation result
 uint32_t fileSize;                        // User application size in bytes
-uint8_t  fileBuffer[FILE_BUFFER_SIZE];    // File read buffer
-volatile bool USB_status = false;        // Check if USB disk is available
+uint8_t  fileBuffer[FILE_BUFFER_SIZE]; // File read buffer
+volatile bool USB_status = false;      // Check if USB disk is available
 volatile bool _disk_busy = false;
 
 // TinyUSB API implementation
@@ -187,8 +187,7 @@ void uart_printf(const char * fmt, ...)
                     else
                       num = s_int;
                   goto ATOI;
-                case 'x':
-                case 'X':      // Hexadecimal, base 16
+                case 'x':      // Hexadecimal, base 16
                     base += 6; // 2 + 6 + 8 is base 16
                 case 'u':      // Unsigned integer, base 10
                     base += 8; // 2 + 8 is base 10
