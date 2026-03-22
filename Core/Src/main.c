@@ -210,7 +210,7 @@ void uart_printf(const char * fmt, ...)
 
                     width -= q - tmp;
                     while (width-- > 0)
-                      *(buf++) = zero_space;
+                      *(buf++) = space_zero;
 
                    while (tmp < q) // Reverse data order, "123" --> "321"
                        *(buf++) = *(--q);
